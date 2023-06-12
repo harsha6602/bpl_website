@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>BPL</title>
+  <!-- Favicon-->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="nav-item" href="{% url 'index' %}"><img src="{% static 'images/BIET_LOGO.png' %}" width="50" height="50" alt="..." /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'registration' %}">Registration</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'team_details' %}">Team Details</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'scores' %}">Scores</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Admin</a></li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+    <div class="container">
+        <div class="jumbotron">
+          {% if player_info %}
+            <table class="table table-bordered">
+              <thead class="table-dark">
+                <th>team ID</th>
+                <th>player Name</th>
+                <th>USN</th>
+                <th>branch</th>
+                <th>sport</th>
+              </thead>
+            {% for i in player_info %}
+            <tr>
+              <td>{{ i.player_team_id }}</td>
+              <td>{{ i.player_name }}</td>
+              <td>{{ i.player_id }}</td>
+              <td>{{ i.branch}}</td>
+              <td>{{ i.sport }}</td>
+            </tr>
+            {% endfor %}
+            </table>
+          {% else %}
+            <p> NO RECORDS FOUND</p>
+          {% endif %}
+    </div>
+    </div>
+</body>
+</html>

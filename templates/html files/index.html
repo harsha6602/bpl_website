@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>BPL</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="nav-item" href="{% url 'index' %}"><img src="{% static 'images/BIET_LOGO.png' %}" width="50" height="50" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#test">Registration</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'team_details' %}">Team Details</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'scores' %}">Scores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Admin</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://images.unsplash.com/photo-1634348409537-a8d702476836?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fGNyaWNrZXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60') ">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="{% static 'images/Unicslogo.png' %}" alt="..." />
+                <h1 class="text-white fs-3 fw-bolder">BPL</h1>
+                <p class="text-white-50 mb-0">Bapuji Premier League</p>
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <p class="lead">Every year, CSE department of BIET organises a sports tournament named as Bapuji Premier League (BPL). Students from various branches actively participate in this event in teams.</p>
+                        <p class="mb-0">Cricket is the major sport organised and Badminton is newly added for the tournament. All the branches of BIET encourage their students to participate and represent their respective branch. The cricket is dedicatedly organised for boys and Badminton for girl students.</p>
+                        <p> </p>
+                        <h3 class="lead">Register here:</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <a href="{% url 'registration' %}" style="text-decoration: none; color: burlywood; text-align: center;" name="test">
+                    <div class="row justify-content-center">
+                        <div style="border:solid 5px;padding:20px; max-width:50%; margin-bottom:20px;">
+                            <h2>Cricket</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="container my-5">
+                <a href="{% url 'badminton_reg' %}" style="text-decoration:none;color:burlywood;text-align:center;">
+                    <div class="row justify-content-center">
+                        <div style="border:solid 5px;padding:20px; max-width:50%; margin-bottom:20px;">
+                            <h2>Badminton</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; BPL 2022</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

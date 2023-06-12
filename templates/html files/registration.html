@@ -1,0 +1,185 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+    <head>
+        <script>function fun() {
+            alert("Registered successfully!!");
+            }</script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>BPL</title>
+        <!-- Favicon-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="nav-item" href="{% url 'index' %}"><img src="{% static 'images/BIET_LOGO.png' %}" width="50" height="50" alt="..." /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Registration</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'team_details' %}">Team Details</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'scores' %}">Scores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <body>
+        <section class="h-100 h-custom">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-lg-8 col-xl-6">
+                        <div class="card rounded-3">
+                            <img src="{% static 'images/cricket.jpg' %}"
+                                 class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;height:200px;"
+                                 alt="Sample photo">
+                            <div class="card-body p-4 p-md-5">
+                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Team Information</h3>
+
+                                <form class="px-md-2" onsubmit="fun()" method="post">
+                                    {% csrf_token %}
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="form3Example1q" class="form-control" placeholder="team name" name="team_name"/>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <label for="exampleDatepicker1" class="form-label">Teams Branch</label>
+                                            <select class="select" name="branch">
+
+                                                <option value="1">Branch</option>
+                                                <option value="2">CSE</option>
+                                                <option value="3">ISE</option>
+                                                <option value="4">CIV</option>
+                                                <option value="2">MECH</option>
+                                                <option value="3">TEXTILE</option>
+                                                <option value="4">ECE</option>
+                                                <option value="4">EEE</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                        <label>Captain Details</label>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="captain_name">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="USN" aria-label="USN" name="captain_usn">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number" name="captain_phno">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                        <label>Player-2</label>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="name2">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="USN" aria-label="USN" name="usn2">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number" name="phno2">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                        <label>Player-3</label>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="name3">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="USN" aria-label="USN" name="usn3">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number" name="phno3">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                        <label>Player-4</label>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="name4">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="USN" aria-label="USN" name="usn4">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number" name="phno4">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                        <label>Player-5</label>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="name5">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="USN" aria-label="USN" name="usn5">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number" name="phno5">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                        <label>Player-6</label>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="name6">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="USN" aria-label="USN" name="usn6">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number" name="phno6">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                        <label>Player-7</label>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="name7">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="USN" aria-label="USN" name="usn7">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number" name="phno7">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                        <label>Player-8</label>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="name8">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="USN" aria-label="USN" name="usn8">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number" name="phno8">
+                                        </div>
+                                    </div>
+                                    
+
+                                    <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
